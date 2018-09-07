@@ -3,3 +3,25 @@ revenue <- c(14574.49, 7606.46, 8611.41, 9175.41, 8058.65, 8105.44, 11496.28, 97
 expenses <- c(12051.82, 5695.07, 12319.20, 12089.72, 8658.57, 840.20, 3285.73, 5821.12, 6976.93, 16618.61, 10054.37, 3803.96)
 
 #Solution
+
+#Profit for each month
+profit <- round(revenue-expenses)
+
+# Profit after tax
+profit_after_tax <- round(round(profit*0.7, digits = 2))
+
+#Profit margin for each month
+profit_margin <- round((profit_after_tax/revenue)*100)
+
+#Good Months
+mean <- profit_after_tax / length(profit_after_tax)
+good_months <- profit_after_tax > mean
+
+#bad Months
+bad_months <- profit_after_tax < mean
+
+#Best month
+best_month <- profit_after_tax < max(profit_after_tax)
+
+#Worst Month
+worst_month <- profit_after_tax > min(profit_after_tax)

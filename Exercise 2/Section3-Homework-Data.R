@@ -14,7 +14,7 @@ profit_after_tax <- round(round(profit*0.7, digits = 2))
 profit_margin <- round((profit_after_tax/revenue)*100)
 
 #Good Months
-mean <- profit_after_tax / length(profit_after_tax)
+mean <- mean(profit_after_tax)
 good_months <- profit_after_tax > mean
 
 #bad Months

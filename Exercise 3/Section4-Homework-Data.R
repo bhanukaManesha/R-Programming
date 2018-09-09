@@ -70,20 +70,20 @@ DwayneWade_FTA <- c(803,535,467,771,702,652,297,425,258,370)
 #
 FreeThrowsAttempts <- rbind(KobeBryant_FTA,JoeJohnson_FTA,LeBronJames_FTA,CarmeloAnthony_FTA,DwightHoward_FTA,ChrisBosh_FTA,ChrisPaul_FTA,KevinDurant_FTA,DerrickRose_FTA,DwayneWade_FTA)
 rm(KobeBryant_FTA,JoeJohnson_FTA,LeBronJames_FTA,CarmeloAnthony_FTA,DwightHoward_FTA,ChrisBosh_FTA,ChrisPaul_FTA,KevinDurant_FTA,DerrickRose_FTA,DwayneWade_FTA)
-colnames(FreeThrows) <- Seasons
-rownames(FreeThrows) <- Players
+colnames(FreeThrowsAttempts) <- Seasons
+rownames(FreeThrowsAttempts) <- Players
 #
 
 
 #Free Throw Attempts Per Game
-FreeThrowAttemptsPerGame <- FreeThrows/Games
+FreeThrowAttemptsPerGame <- FreeThrowsAttempts/Games
 #Plot the Graph
-matplot(t(FreeThrowsAttempts), type="b", pch = 15:18, col=c(1:4,6))
+matplot(t(FreeThrowAttemptsPerGame), type="b", pch = 15:18, col=c(1:4,6))
 legend("topright", inset = 0.01, legend=Players,col=c(1:4,6),pch = 15:18,horiz = F)
 
 
 #Accuracy of Freethrows
-Accuracy <- FreeThrows/FreeThrowAttemptsPerGame
+Accuracy <- FreeThrows/FreeThrowsAttempts
 
 #Plot the Graph
 matplot(t(Accuracy), type="b", pch = 15:18, col=c(1:4,6))

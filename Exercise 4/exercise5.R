@@ -25,21 +25,21 @@ merged2013 <- merge(x=data2013,
                     by.x="Country.Code",
                     by.y="Code")
 
+merged1960$Year <- NULL
+merged2013$Year <- NULL
 
-p1 <- qplot(data=merged1960,
+qplot(data=merged1960,
       x=Fertility.Rate,
       y=Life.Expectancy,
       color=Region,
       main="Fertility Rate vs Life Expectancy in 1960",
       size=I(4)
-      
       )
 
-p2 <- qplot(data=merged2013,
+qplot(data=merged2013,
       x=Fertility.Rate,
       y=Life.Expectancy,
       color=Region,
       main="Fertility Rate vs Life Expectancy in 2013",
       size=I(4)
-      
-)
+      )
